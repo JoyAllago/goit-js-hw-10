@@ -2,17 +2,16 @@ import { fetchBreeds, fetchCatByBreed } from './cat-api';
 
 
 
+
 const breedSelectEl = document.querySelector('.breed-select');
 const catInfoEl = document.querySelector('.cat-info');
 const loaderEl = document.querySelector('.loader');
 const errorEl = document.querySelector('.error');
 
 
-// for creating the options
 function chooseBreed(data) {
   fetchBreeds(data)
     .then(data => {
-      //   console.log(data);
       loaderEl.classList.replace('loader', 'is-hidden');
 
       let optionsMarkup = data.map(({ name, id }) => {
@@ -28,11 +27,8 @@ function chooseBreed(data) {
 chooseBreed();
 
 
-
 function createMarkup(event) {
-  // Show loader while loading
   loaderEl.classList.replace('is-hidden', 'loader');
-  // Hide select element and cat info markup while loading
   breedSelectEl.classList.add('is-hidden');
   catInfoEl.classList.add('is-hidden');
 
@@ -66,8 +62,6 @@ breedSelectEl.addEventListener('change', createMarkup);
 
 
 function onError() {
-  // Show error Message
   errorEl.classList.remove('is-hidden');
-  //   Hide select element
   breedSelectEl.classList.add('is-hidden');
 }
