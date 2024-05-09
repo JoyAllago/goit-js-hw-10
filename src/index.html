@@ -1,16 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 10</title>
+    <title>Cat Meow</title>
+    <link rel="stylesheet" href="./sass/index.scss" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./index.js"></script>
   </head>
-  <body>
-    <select class="breed-select"></select>
-    <p class="loader">Loading data, please wait...</p>
-    <p class="error">Oops! Something went wrong! Try reloading the page!</p>
-    <div class="cat-info"></div>
+  <body >
+   <div class="flex justify-start mt-32 items-center flex-col w-screen h-screen">
+    <select id="cat_select" class="breed-select  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[300px] p-2.5 "></select>
 
-    <script src="index.js" type="module"></script>
+    <div id="loader"
+      class="max-w-xl  mt-5 hidden p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-400">
+      <div class="flex items-center w-[400px] justify-center h-[400px] mb-4 bg-gray-300 rounded dark:bg-gray-400">
+        <svg viewBox="0 0 16 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+          class="w-16 h-16 text-gray-200 dark:text-gray-600">
+          <path
+            d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z">
+          </path>
+          <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z"></path>
+        </svg>
+      </div>
+      <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-400 w-48 mb-4"></div>
+      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-400 mb-2.5"></div>
+      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-400 mb-2.5"></div>
+      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-400"></div>
+   
+      <span class="sr-only">Loading...</span>
+    </div>
+
+    <div id="error" class="hidden mt-5 p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 " role="alert">
+      <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+    </div>
+    <div class="cat-info"> <h1
+      class="max-w-2xl mt-5 mx-auto text-center font-manrope font-bold text-4xl text-gray-900 mb-5 md:text-5xl leading-[50px]"
+    >
+      Select a 
+      <span class="text-indigo-600">Cat</span>
+    </h1></div>
+   </div>
+
   </body>
 </html>
